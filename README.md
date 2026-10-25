@@ -1,6 +1,6 @@
 # Amazon SEC Financial Dashboard
 
-[![🔗 대시보드 바로가기](https://img.shields.io/badge/%F0%9F%94%97%20%EB%8C%80%EC%8B%9C%EB%B3%B4%EB%93%9C%20%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-Visit%20Dashboard-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)](https://jinawinwin.github.io/SEC_Amazon/)
+<a href="https://jinawinwin.github.io/SEC_Amazon/"><img src="assets/amazon-dashboard-badge.png" width="88" alt="Amazon SEC 대시보드 바로가기"></a> [🔗 대시보드 바로가기](https://jinawinwin.github.io/SEC_Amazon/)
 
 Amazon.com, Inc. (CIK 1018724)의 SEC EDGAR XBRL 공시를 모아 매출·수익성·재무상태·현금흐름을 살펴보는 대시보드입니다.
 
