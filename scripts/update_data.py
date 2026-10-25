@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 import json
+import os
 
 CIK = "0001018724"
 URL = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{CIK}.json"
@@ -41,8 +42,11 @@ def unit_rows(fact, key):
     return units.get(unit, [])
 
 def main():
+    contact = os.environ.get("SEC_CONTACT_EMAIL", "").strip()
+    if not contact:
+        raise RuntimeError("Set the SEC_CONTACT_EMAIL Actions secret to a monitored contact email before running the SEC refresh.")
     req = Request(URL, headers={
-        "User-Agent": "jinawinwin SEC_Amazon dashboard (https://github.com/jinawinwin/SEC_Amazon)",
+        "User-Agent": f"Amazon SEC Dashboard/1.0 {contact}",
         "Accept": "application/json",
         "Accept-Encoding": "gzip, deflate",
         "Host": "data.sec.gov",

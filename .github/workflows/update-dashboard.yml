@@ -26,7 +26,17 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Check SEC contact configuration
+        env:
+          SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
+        run: |
+          if [ -z "$SEC_CONTACT_EMAIL" ]; then
+            echo "::error title=SEC contact missing::Add SEC_CONTACT_EMAIL under Settings > Secrets and variables > Actions before refreshing data."
+            exit 1
+          fi
       - name: Refresh Amazon SEC data
+        env:
+          SEC_CONTACT_EMAIL: ${{ secrets.SEC_CONTACT_EMAIL }}
         run: python scripts/update_data.py
       - name: Commit refreshed data
         run: |

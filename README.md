@@ -29,4 +29,4 @@ Amazon.com, Inc. (CIK 1018724)의 SEC EDGAR XBRL 공시를 모아 매출·수익
 
 ## SEC 원자료 및 자동 갱신
 
-SEC [Company Facts API](https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json)와 [EDGAR 제출 내역](https://www.sec.gov/edgar/browse/?CIK=1018724&owner=exclude)을 원천으로 사용합니다. `scripts/update_data.py`가 원자료를 `data/companyfacts.json`, 정제 수치를 `data/financials.json`에 저장합니다. GitHub Actions가 매월 5일 00:00 UTC (한국시간 09:00)에 데이터를 갱신하고 GitHub Pages를 배포합니다. 최초 데이터 수집은 저장소 Actions에서 `Update Amazon SEC dashboard` workflow를 수동 실행하거나 매월 예약 실행을 기다리면 됩니다.
+SEC [Company Facts API](https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json)와 [EDGAR 제출 내역](https://www.sec.gov/edgar/browse/?CIK=1018724&owner=exclude)을 원천으로 사용합니다. `scripts/update_data.py`가 원자료를 `data/companyfacts.json`, 정제 수치를 `data/financials.json`에 저장합니다. GitHub Actions가 매월 5일 00:00 UTC (한국시간 09:00)에 데이터를 갱신하고 GitHub Pages를 배포합니다. 최초 실행 전에 Settings → Secrets and variables → Actions에서 모니터링 가능한 이메일을 `SEC_CONTACT_EMAIL` secret으로 등록하세요. 이후 Actions에서 `Update Amazon SEC dashboard` workflow를 수동 실행하면 첫 수집 및 배포를 시작할 수 있습니다.
